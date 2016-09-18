@@ -11,19 +11,15 @@ public final class Movie {
 
     private final Date releaseDate;
     private final int runtime;
-    private final String plot;
-    private final String country;
 
     private final double imdbRating;
 
     public Movie(String title, MovieType movieType,
-                 Date releaseDate, int runtime, String plot, String country, double imdbRating) {
+                 Date releaseDate, int runtime, double imdbRating) {
         this.title = title;
         this.movieType = movieType;
         this.releaseDate = releaseDate;
         this.runtime = runtime;
-        this.plot = plot;
-        this.country = country;
         this.imdbRating = imdbRating;
     }
 
@@ -43,15 +39,18 @@ public final class Movie {
         return runtime;
     }
 
-    public String getPlot() {
-        return plot;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
     public double getImdbRating() {
         return imdbRating;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", movieType=" + movieType +
+                ", releaseDate=" + releaseDate +
+                ", runtime=" + runtime +
+                ", imdbRating=" + imdbRating +
+                '}';
     }
 }
